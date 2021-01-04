@@ -17,14 +17,15 @@ namespace coderush.Areas.Identity.Pages.Account.Manage
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
-        private readonly IEmailSender _emailSender;
+        private readonly Services.App.IEmailSender _emailSender;
         private readonly IdentityDefaultOptions _identityDefaultOptions;
         private readonly SuperAdminDefaultOptions _superAdminDefaultOptions;
 
         public IndexModel(
             UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager,
-            IEmailSender emailSender,
+            Services.App.IEmailSender emailSender,
+            //IEmailSender emailSender,
             IOptions<IdentityDefaultOptions> identityDefaultOptions,
             IOptions<SuperAdminDefaultOptions> superAdminDefaultOptions
             )

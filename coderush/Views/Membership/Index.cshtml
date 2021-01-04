@@ -24,7 +24,7 @@
             <div class="box-header with-border">
                 <h3 class="box-title">List of member</h3>
                 <div class="box-tools pull-right">
-                    <a href="/Membership/Register" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+                    <a asp-controller="Membership" asp-action="Register" class="btn btn-primary"><i class="fa fa-plus"></i></a>
 
                 </div>
             </div>
@@ -51,9 +51,12 @@
                                                     <span class="caret"></span>
                                                 </button>
                                                 <ul class="dropdown-menu">
-                                                    <li><a href="/Membership/ChangeProfile/@item.Id">Change Profile</a></li>
+                                                  @*<li><a href="/Membership/ChangeProfile/@item.Id">Change Profile</a></li>
                                                     <li><a href="/Membership/ChangePassword/@item.Id">Reset Password</a></li>
-                                                    <li><a href="/Membership/ChangeRole/@item.Id">Change Role</a></li>
+                                                    <li><a href="/Membership/ChangeRole/@item.Id">Change Role</a></li>*@
+                                                  <li><a asp-controller="Membership" asp-action="ChangeProfile" asp-route-id="@item.Id">Change Profile</a></li>
+                                                  <li><a asp-controller="Membership" asp-action="ChangePassword" asp-route-id="@item.Id">Reset Password</a></li>
+                                                  <li><a asp-controller="Membership" asp-action="ChangeRole" asp-route-id="@item.Id">Change Role</a></li>
                                                 </ul>
                                             </div>
                                         </div>
